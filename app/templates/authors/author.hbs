@@ -1,1 +1,19 @@
 {{outlet}}
+{{model.username}}<br>
+<img src={{model.profilepicture}}><br>
+Firs name : {{model.firstname}}<br>
+Lirs name : {{model.Lirstname}}<br>
+Email: {{model.email}}<br>
+posts:<br>
+<table>
+  <tr>
+    <td>title</td><td>published date</td><td>content</td>
+  </tr>
+{{#each model.posts as |post|}}
+<tr>
+  <td>  <button type="submit" {{action 'eliminarPost' post}}>Delete Post</button></td><td>{{post.title}}</td><td>{{post.publishedAt}}</td><td>{{post.content}}</td>
+</tr>
+
+
+{{/each}}
+</table>
